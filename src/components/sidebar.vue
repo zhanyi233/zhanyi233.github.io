@@ -19,27 +19,15 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-const activeRoute = ref("1");
+const activeRoute = ref("css-named");
 const menus = ref([
-  {
-    label: "Html",
-    value: "Html",
-  },
   {
     label: "Css",
     value: "Css",
-  },
-  {
-    label: "JavaScript",
-    value: "JavaScript",
     children: [
       {
-        label: "JSON.parse 遇到转义字符",
-        value: "1",
-      },
-      {
-        label: "JavaScript单行代码",
-        value: "2",
+        label: '命名规范',
+        value: 'css-named',
       },
     ],
   },
