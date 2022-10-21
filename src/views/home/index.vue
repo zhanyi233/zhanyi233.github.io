@@ -1,19 +1,20 @@
 <template>
   <v-header />
-  <v-sidebar :active="activeRoute" :list="menus" @click="handleChangeMenu"/>
+  <v-sidebar :active="activeRoute" :list="menus" @click="handleChangeMenu" />
   <div class="page-content">
     <div class="wrapper">
-      <article class="markdown-body" v-html="mds[activeRoute]"></article>
+      <article class="markdown-body" v-html="html"></article>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import vHeader from "../../components/header.vue";
 import vSidebar from "../../components/sidebar.vue";
 import mds from "./mds/index";
 
+const html = ref(null);
 const activeRoute = ref("CssNamed");
 const menus = ref([
   {
@@ -41,4 +42,14 @@ const menus = ref([
 const handleChangeMenu = ({ value }) => {
   activeRoute.value = value;
 };
+
+watch(
+  () => activeRoute.value,
+  (newVal, oldVal) => {
+    if (newVal !== oldVal) {
+      html.value = mds[newVal];
+    }
+  },
+  { immediate: true, deep: true }
+);
 </script>
