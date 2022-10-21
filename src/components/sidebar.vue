@@ -1,13 +1,14 @@
 <template>
   <el-scrollbar class="sidebar">
     <div class="sidebar-groups">
-      <div class="sidebar-group" v-for="item in menus" :key="item.value">
+      <div class="sidebar-group" v-for="item in list" :key="item.value">
         <p>{{ item.label }}</p>
         <div
           class="sidebar-group__item"
           v-for="child in item.children"
           :key="child.value"
-          :class="{'is-active': activeRoute === child.value}"
+          :class="{ 'is-active': active === child.value }"
+          @click="onClickMenu(child)"
         >
           {{ child.label }}
         </div>
@@ -16,20 +17,32 @@
   </el-scrollbar>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
+<script>
+import { defineComponent } from 'vue';
 
-const activeRoute = ref("css-named");
-const menus = ref([
-  {
-    label: "Css",
-    value: "Css",
-    children: [
-      {
-        label: '命名规范',
-        value: 'css-named',
-      },
-    ],
+export default defineComponent({
+  emits: ['click'],
+
+  props: {
+    active: {
+      type: String,
+      default: "",
+    },
+
+    list: {
+      type: Array,
+      default: () => [],
+    },
   },
-]);
+
+  setup(props, ctx) {
+    const onClickMenu = (item) => {
+      ctx.emit('click', item);
+    };
+
+    return {
+      onClickMenu,
+    };
+  },
+});
 </script>

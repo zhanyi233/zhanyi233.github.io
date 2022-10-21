@@ -32,10 +32,13 @@
   }
 
   pre {
-    background-color: #eee;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    margin: 12px 0 12px;
+		padding: 16px;
+    overflow: auto;
+    font-size: 12px;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    margin: 8px 0;
   }
 
   blockquote {
@@ -51,7 +54,7 @@
   }
 
   code {
-    background-color: #eee;
+    background-color: transparent;
   }
 
   ul,

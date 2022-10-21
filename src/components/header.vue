@@ -12,15 +12,15 @@
             :ref="navItemRef"
             class="nav-item"
             v-for="(item, index) in navs"
-            :key="item.value"
-            :class="{ active: item.value === activeRoute }"
+            :key="item.path"
+            :class="{ active: activeRoute.includes(item.path) }"
             @click="onClickMenu(item, index)"
           >
             <div class="nav-item__inner">
-              <el-icon :size="20" style="margin-right: 10px;">
-                <component :is="item.icon"></component>
+              <el-icon :size="20" style="margin-right: 10px">
+                <component :is="item.meta.icon"></component>
               </el-icon>
-              {{ item.label }}
+              {{ item.meta.title }}
             </div>
           </li>
         </ul>
@@ -30,26 +30,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
-let activeRoute = ref("Home");
-const navs = ref([
-  {
-    value: "Home",
-    label: "首页",
-    icon: "House",
-  },
-  {
-    value: "Interview",
-    label: "面试集",
-    icon: 'Folder',
-  },
-  {
-    value: "Echarts",
-    label: "Echarts",
-    icon: 'TrendCharts',
-  },
-]);
+const Route = useRoute(); // 当前路由
+const Router = useRouter();
+
+/**
+ * @description: 导航栏
+ */
+let activeRoute = ref("");
+const navs = ref([]);
 
 const navItemActiveStyle = ref(null);
 const refList = ref([]);
@@ -59,18 +50,13 @@ const navItemRef = (el) => {
   }
 };
 
-const onClickMenu = ({ value }, index) => {
-  activeRoute.value = value;
-  const target = refList.value[index];
-
-  handleActiveNavitem(target);
-};
-
 /**
  * @description: 将目标菜单高亮选中
  * @param target 目标dom
  */
 const handleActiveNavitem = (target) => {
+  if (!target) return;
+
   const height = target.clientHeight,
     width = target.clientWidth,
     top = target.offsetTop,
@@ -84,16 +70,45 @@ const handleActiveNavitem = (target) => {
   };
 };
 
+const onClickMenu = ({ path }, index) => {
+  activeRoute.value = path;
+  const target = refList.value[index];
+  Router.push(path);
+};
+
+/**
+ * @description: 获取导航栏菜单
+ */
+const getRoutes = () => {
+  activeRoute.value = Route.path;
+  navs.value = Router.options.routes.filter(({ path }) => path !== "/");
+  setTimeout(() => {
+    init();
+  }, 300);
+};
+
 /* 初始化高亮选中当前菜单 */
 const init = () => {
-  const index = navs.value.findIndex(
-    ({ value }) => value === activeRoute.value
+  if (!refList.value.length) return;
+
+  const index = navs.value.findIndex(({ path }) =>
+    activeRoute.value.includes(path)
   );
+  
   const target = refList.value[index];
   handleActiveNavitem(target);
 };
 
+watch(
+  () => Route.path,
+  (to, from) => {
+    if (to !== from) {
+      getRoutes();
+    }
+  },
+  { immediate: true, deep: true }
+);
+
 onMounted(() => {
-  init();
 });
 </script>
