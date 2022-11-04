@@ -30,8 +30,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, defineComponent } from "vue";
 import { useRouter, useRoute } from "vue-router";
+
+defineComponent({
+  name: 'VHeader',
+});
 
 const Route = useRoute(); // 当前路由
 const Router = useRouter();

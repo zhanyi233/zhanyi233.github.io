@@ -10,10 +10,16 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "@vue/compiler-core": "^3.2.41",
+    "echarts": "^5.4.0",
     "element-plus": "^2.2.18",
     "nprogress": "^0.2.0",
+    "prism-theme-vars": "^0.2.4",
+    "prismjs": "^1.29.0",
+    "unplugin-vue-define-options": "^0.12.7",
     "vite-plugin-markdown": "^2.1.0",
     "vue": "^3.2.37",
+    "vue-clipboard3": "^2.0.0",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import NProgress from "nprogress";
 
-import 'nprogress/nprogress.css';
+import "nprogress/nprogress.css";
 
 const routes = [
   {
@@ -12,31 +12,47 @@ const routes = [
     path: "/home",
     name: "Home",
     meta: {
-      title: '首页',
+      title: "首页",
       icon: "House",
     },
     component: () =>
-          import(/* webpackChunkName: "Home" */ "../views/home/index.vue"),
+      import(/* webpackChunkName: "Home" */ "../views/home/index.vue"),
   },
   {
     path: "/echarts",
     name: "Echarts",
     meta: {
-      title: 'Echarts',
-      icon: 'TrendCharts',
+      title: "Echarts",
+      icon: "TrendCharts",
     },
+    redirect: "/echarts/line",
     component: () =>
-          import(/* webpackChunkName: "Echarts" */ "../views/echarts/index.vue"),
+      import(/* webpackChunkName: "Echarts" */ "../views/echarts/index.vue"),
+    children: [
+      {
+        path: "/echarts/line",
+        name: "EchartsLine",
+        meta: {
+          title: "折线图",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "EchartsLine" */ "../views/echarts/line/line.vue"
+          ),
+      },
+    ],
   },
   {
     path: "/interview",
     name: "Interview",
     meta: {
-      title: '面试题集',
-      icon: 'Folder',
+      title: "面试题集",
+      icon: "Folder",
     },
     component: () =>
-          import(/* webpackChunkName: "Interview" */ "../views/interview/index.vue"),
+      import(
+        /* webpackChunkName: "Interview" */ "../views/interview/index.vue"
+      ),
   },
 ];
 
