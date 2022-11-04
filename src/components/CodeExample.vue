@@ -103,7 +103,7 @@ watch(showCode, (val) => {
 
   .op-btn {
     border-top: solid 1px var(--border-color);
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
