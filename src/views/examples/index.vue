@@ -14,7 +14,7 @@ import vHeader from "../../components/header.vue";
 import vSidebar from "../../components/sidebar.vue";
 import { useRouter } from "vue-router";
 
-const currentRoutePath = '/echarts';
+const currentRoutePath = "/examples";
 
 const Router = useRouter();
 
@@ -22,10 +22,10 @@ const activeRoute = ref("");
 const menus = ref([]);
 
 const getRoutes = () => {
-  const target = Router.options.routes.filter(
+  const target = Router.options.routes.find(
     ({ path }) => path === currentRoutePath
   );
-  menus.value = target.map(({ name, meta, children }) => {
+  menus.value = target.children.map(({ name, meta, children }) => {
     return {
       label: meta.title,
       value: name,

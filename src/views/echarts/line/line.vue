@@ -5,7 +5,7 @@
   <div class="component-block" v-for="item in comList" :key="item.component">
     <h2>{{ item.title }}</h2>
     <div class="component-block--desc">{{ item.desc }}</div>
-    <code-example :description="item.description" :component="item.component" />
+    <code-example :component="item.component" />
   </div>
 </template>
 

@@ -19,10 +19,48 @@ const routes = [
       import(/* webpackChunkName: "Home" */ "../views/home/index.vue"),
   },
   {
+    path: "/examples",
+    name: "Examples",
+    meta: {
+      title: "示例",
+      icon: "Star",
+    },
+    redirect: "/examples/css",
+    component: () =>
+      import(/* webpackChunkName: "Examples" */ "../views/examples/index.vue"),
+    children: [
+      {
+        path: "/examples/css",
+        name: "ExamplesCss",
+        meta: {
+          title: "Css",
+        },
+        redirect: "/examples/css/chessboard",
+        component: () =>
+          import(
+            /* webpackChunkName: "ExamplesCss" */ "../views/examples/css/index.vue"
+          ),
+        children: [
+          {
+            path: "/examples/css/chessboard",
+            name: "ExamplesCssChessboard",
+            meta: {
+              title: "棋盘格布局",
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "ExamplesCssChessboard" */ "../views/examples/css/chessboard.vue"
+              ),
+          },
+        ],
+      },
+    ],
+  },
+  {
     path: "/echarts",
     name: "Echarts",
     meta: {
-      title: "Echarts",
+      title: "图表",
       icon: "TrendCharts",
     },
     redirect: "/echarts/line",
