@@ -74,9 +74,8 @@ const handleActiveNavitem = (target) => {
   };
 };
 
-const onClickMenu = ({ path }, index) => {
+const onClickMenu = ({ path }) => {
   activeRoute.value = path;
-  const target = refList.value[index];
   Router.push(path);
 };
 

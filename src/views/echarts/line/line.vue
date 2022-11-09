@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import BasicLine from "./demo/basic.vue";
+import BasicLine from "./demo/basic-line.vue";
 
 const comList = [
   {

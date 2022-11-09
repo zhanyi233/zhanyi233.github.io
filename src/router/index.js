@@ -92,6 +92,16 @@ const routes = [
         /* webpackChunkName: "Interview" */ "../views/interview/index.vue"
       ),
   },
+  {
+    path: "/about",
+    name: "About",
+    meta: {
+      title: "关于我",
+      icon: "User",
+    },
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/about/index.vue"),
+  },
 ];
 
 const router = createRouter({

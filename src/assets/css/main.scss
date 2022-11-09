@@ -39,8 +39,7 @@ a {
 
 #nprogress {
   .spinner {
-    right: 0;
-    left: 10px;
+    right: 10px;
     top: 22px;
 
     .spinner-icon {
@@ -59,7 +58,7 @@ a {
 
   .navbar-wrapper {
     position: relative;
-    padding: 0 0 0 50px;
+    padding: 0 40px 0 20px;
     background-color: var(--color-primary);
     display: flex;
     flex-direction: row;

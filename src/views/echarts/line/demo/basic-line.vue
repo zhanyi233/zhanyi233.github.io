@@ -1,6 +1,6 @@
 <demo>基本用法</demo>
 <template>
-  <div id="chart" class="chart"></div>
+  <div id="basic-line" class="chart"></div>
 </template>
 
 <script setup>
@@ -62,7 +62,7 @@ const extensionXAxis = (chart) => {
  * @description: 绘制图表
  */
 const drawChart = () => {
-  const myChart = Echarts.init(document.getElementById("chart"));
+  const myChart = Echarts.init(document.getElementById("basic-line"));
   const option = {
     xAxis: {
       type: "category",
