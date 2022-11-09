@@ -30,11 +30,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, defineComponent } from "vue";
+import { ref, onMounted, watch, defineComponent, computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 defineComponent({
-  name: 'VHeader',
+  name: "VHeader",
 });
 
 const Route = useRoute(); // 当前路由
@@ -43,7 +43,7 @@ const Router = useRouter();
 /**
  * @description: 导航栏
  */
-let activeRoute = ref("");
+const activeRoute = computed(() => Route.path);
 const navs = ref([]);
 
 const navItemActiveStyle = ref(null);
@@ -75,7 +75,6 @@ const handleActiveNavitem = (target) => {
 };
 
 const onClickMenu = ({ path }) => {
-  activeRoute.value = path;
   Router.push(path);
 };
 
@@ -83,7 +82,6 @@ const onClickMenu = ({ path }) => {
  * @description: 获取导航栏菜单
  */
 const getRoutes = () => {
-  activeRoute.value = Route.path;
   navs.value = Router.options.routes.filter(({ path }) => path !== "/");
   setTimeout(() => {
     init();
@@ -97,7 +95,7 @@ const init = () => {
   const index = navs.value.findIndex(({ path }) =>
     activeRoute.value.includes(path)
   );
-  
+
   const target = refList.value[index];
   handleActiveNavitem(target);
 };
@@ -111,7 +109,4 @@ watch(
   },
   { immediate: true, deep: true }
 );
-
-onMounted(() => {
-});
 </script>

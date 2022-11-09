@@ -1,5 +1,4 @@
 <template>
-  <v-header />
   <v-sidebar :active="activeRoute" :list="menus" @click="handleChangeMenu" />
   <div class="page-content">
     <div class="wrapper">
@@ -10,7 +9,6 @@
 
 <script setup>
 import { ref, watch } from "vue";
-import vHeader from "../../components/header.vue";
 import vSidebar from "../../components/sidebar.vue";
 import mds from "./mds/index";
 
