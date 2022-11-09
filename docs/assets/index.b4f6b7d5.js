@@ -1,4 +1,4 @@
-import{_ as c}from"./header.d97931eb.js";import{v as d}from"./sidebar.bdbc6333.js";import{r as l,w as p,c as g,a as t,b as i,F as u,o as h}from"./index.6c208fea.js";const m=`<p>CSS \u547D\u540D\u4E00\u822C\u91C7\u7528\u5C0F\u5199\u82F1\u6587\u5355\u8BCD\u6216\u7EC4\u5408\u547D\u540D\uFF0C\u5355\u8BCD\u4E0E\u5355\u8BCD\u95F4\u4EE5&quot;-&quot;\u5206\u5272\uFF1B\u82F1\u6587\u5355\u8BCD\u4E0D\u7F29\u5199\uFF0C\u9664\u975E\u4E00\u770B\u5C31\u80FD\u660E\u767D\u7684\u5355\u8BCD\u3002</p>
+import{v as r}from"./sidebar.e001d0ac.js";import{r as l,w as c,c as d,a as p,b as i,F as g,o as u}from"./index.78692d0e.js";const h=`<p>CSS \u547D\u540D\u4E00\u822C\u91C7\u7528\u5C0F\u5199\u82F1\u6587\u5355\u8BCD\u6216\u7EC4\u5408\u547D\u540D\uFF0C\u5355\u8BCD\u4E0E\u5355\u8BCD\u95F4\u4EE5&quot;-&quot;\u5206\u5272\uFF1B\u82F1\u6587\u5355\u8BCD\u4E0D\u7F29\u5199\uFF0C\u9664\u975E\u4E00\u770B\u5C31\u80FD\u660E\u767D\u7684\u5355\u8BCD\u3002</p>
 <h3>\u6587\u672C\u547D\u540D\u89C4\u8303</h3>
 <ol>
 <li>index.css: \u4E00\u822C\u7528\u4E8E\u9996\u9875\u5EFA\u7ACB\u6837\u5F0F</li>
@@ -86,7 +86,7 @@ import{_ as c}from"./header.d97931eb.js";import{v as d}from"./sidebar.bdbc6333.j
 <li>siteinfoCredits: \u4FE1\u8A89</li>
 <li>siteinfoLegal: \u6CD5\u5F8B\u4FE1\u606F</li>
 </ol>
-`,v=`<h3>1.\u968F\u673A\u83B7\u53D6\u5E03\u5C14\u503C\uFF08true/false\uFF09</h3>
+`,m=`<h3>1.\u968F\u673A\u83B7\u53D6\u5E03\u5C14\u503C\uFF08true/false\uFF09</h3>
 <p>\u6B64\u51FD\u6570\u5C06\u4F7F\u7528<code>Math.random()</code>\u65B9\u6CD5\u8FD4\u56DE\u5E03\u5C14\u503C\uFF08\u771F\u6216\u5047\uFF09\u3002<code>Math.random</code>\u5C06\u521B\u5EFA\u4E00\u4E2A\u4ECB\u4E8E0\u548C1\u4E4B\u95F4\u7684\u968F\u673A\u6570\uFF0C\u7136\u540E\u6211\u4EEC\u68C0\u67E5\u5B83\u662F\u5426\u5927\u4E8E\u6216\u5C0F\u4E8E0.5\u3002\u8FD9\u610F\u5473\u7740\u60A8\u670950\uFF05/ 50\uFF05\u7684\u673A\u4F1A\u5F97\u5230\u5BF9\u6216\u9519\uFF1B</p>
 <pre><code class="language-javascript">const randomBoolean = () =&gt; Math.random() &gt; = 0.5;
 console.log(andomBoolean()); 
@@ -197,4 +197,4 @@ celsiusToFahrenheit(-20);   // -4
 fahrenheitToCelsius(59);    // 15
 fahrenheitToCelsius(32);    // 0
 </code></pre>
-`,f={CssNamed:m,Js_1:v},b={class:"page-content"},w={class:"wrapper"},T=["innerHTML"],y={__name:"index",setup(_){const o=l(null),e=l("CssNamed"),a=l([{label:"Css",value:"Css",children:[{label:"\u547D\u540D\u89C4\u8303",value:"CssNamed"}]},{label:"JavaScript",value:"JavaScript",children:[{label:"JavaScript\u5355\u884C\u4EE3\u7801",value:"Js_1"}]}]),r=({value:n})=>{e.value=n};return p(()=>e.value,(n,s)=>{n!==s&&(o.value=f[n])},{immediate:!0,deep:!0}),(n,s)=>(h(),g(u,null,[t(c),t(d,{active:e.value,list:a.value,onClick:r},null,8,["active","list"]),i("div",b,[i("div",w,[i("article",{class:"markdown-body",innerHTML:o.value},null,8,T)])])],64))}};export{y as default};
+`,v={CssNamed:h,Js_1:m},f={class:"page-content"},b={class:"wrapper"},w=["innerHTML"],_={__name:"index",setup(T){const o=l(null),e=l("CssNamed"),t=l([{label:"Css",value:"Css",children:[{label:"\u547D\u540D\u89C4\u8303",value:"CssNamed"}]},{label:"JavaScript",value:"JavaScript",children:[{label:"JavaScript\u5355\u884C\u4EE3\u7801",value:"Js_1"}]}]),a=({value:n})=>{e.value=n};return c(()=>e.value,(n,s)=>{n!==s&&(o.value=v[n])},{immediate:!0,deep:!0}),(n,s)=>(u(),d(g,null,[p(r,{active:e.value,list:t.value,onClick:a},null,8,["active","list"]),i("div",f,[i("div",b,[i("article",{class:"markdown-body",innerHTML:o.value},null,8,w)])])],64))}};export{_ as default};
