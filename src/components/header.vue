@@ -30,7 +30,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, defineComponent, computed } from "vue";
+import {
+  ref,
+  onMounted,
+  watch,
+  defineComponent,
+  computed,
+  onBeforeUnmount,
+} from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 defineComponent({
@@ -109,4 +116,16 @@ watch(
   },
   { immediate: true, deep: true }
 );
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    getRoutes();
+  });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", () => {
+    getRoutes();
+  });
+});
 </script>
