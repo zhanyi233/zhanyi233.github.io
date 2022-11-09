@@ -7,6 +7,10 @@
     ></Particles>
     <div class="form">
       <div class="title">Hi there 👏</div>
+      <div class="title-msg">
+        🤔 Exploring new technologies and developing software solutions and quick
+        hacks -- 为爱发电！
+      </div>
       <ul class="list">
         <li v-for="item in list" :key="item.title" class="list-item">
           <div class="list-item--title">{{ item.title }}</div>
@@ -18,6 +22,12 @@
             >
               <img :src="child.img" alt="" />
             </div>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="list-item--title">🤝 Connect with Me</div>
+          <div class="list-item--link">
+            <a href="mailto:2331767972@qq.com">点击发送邮件</a>
           </div>
         </li>
       </ul>
@@ -116,12 +126,10 @@ const goTo = ({ url = "" }) => {
 <style lang="scss" scoped>
 .about-wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  padding-top: 116px;
 
   .form {
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
     width: 800px;
     border: 1px solid #d0d7de;
     color: #000;
@@ -131,6 +139,12 @@ const goTo = ({ url = "" }) => {
 
     .title {
       font-size: 18px;
+    }
+
+    .title-msg {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #666;
     }
 
     .list {
@@ -157,6 +171,12 @@ const goTo = ({ url = "" }) => {
             img {
               cursor: pointer;
             }
+          }
+        }
+
+        .list-item--link {
+          a {
+            color: var(--color-primary);
           }
         }
       }
