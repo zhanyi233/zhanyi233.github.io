@@ -1,7 +1,9 @@
 <template>
   <div class="navbar">
     <div class="navbar-wrapper">
-      <div class="navbar-brand">Frontend</div>
+      <div class="navbar-brand">
+        <img alt="" src="../assets/images/logo.png"/>
+      </div>
       <div class="navbar-collapse">
         <ul class="navbar-nav">
           <div class="hori-selector" :style="navItemActiveStyle">
