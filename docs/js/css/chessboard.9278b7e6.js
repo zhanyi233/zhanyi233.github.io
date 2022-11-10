@@ -1,4 +1,4 @@
-import{_ as r,o as x,a as c,h as s,k as o}from"../../assets/index.99e2910b.js";function p(n){n.__sourceCode=`<template>
+import{_ as i,o as t,a,b as p,F as l,k as x}from"../../assets/index.02ffa613.js";function e(n){n.__sourceCode=`<template>
   <div class="g-grid"></div>
 </template>
 
@@ -136,4 +136,4 @@ import{_ as r,o as x,a as c,h as s,k as o}from"../../assets/index.99e2910b.js";f
     -webkit-box-reflect: below 260px;
   }
 }
-</style>`,n.__sourceCodeTitle="\u68CB\u76D8\u683C\u5E03\u5C40"}const e={},i={class:"g-grid"};function l(n,a){return x(),c("div",i)}typeof p=="function"&&p(e);const d=r(e,[["render",l],["__scopeId","data-v-231b0cb2"]]),_={__name:"chessboard",setup(n){return(a,f)=>{const t=o("code-example");return x(),s(t,{component:d})}}};export{_ as default};
+</style>`,n.__sourceCodeTitle="\u68CB\u76D8\u683C\u5E03\u5C40"}const r={},d={class:"g-grid"};function f(n,c){return t(),a("div",d)}typeof e=="function"&&e(r);const g=i(r,[["render",f],["__scopeId","data-v-231b0cb2"]]),u={__name:"chessboard",setup(n){return(c,_)=>{const s=x("v-message"),o=x("code-example");return t(),a(l,null,[p(s,{title:"\u6E29\u99A8\u63D0\u793A",desc:"\u7EC3\u624B\u7684\u6837\u5F0F\uFF0C\u770B\u4E00\u770B\u5C31\u597D\u5566\uFF5E"}),p(o,{component:g})],64)}}};export{u as default};

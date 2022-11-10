@@ -1,4 +1,5 @@
-import{v as d}from"../sidebar/sidebar.71e86bf2.js";import{r as t,c as p,w as u,a as g,b as h,u as m,d as e,F as v,o as f,e as b,f as w}from"../../assets/index.99e2910b.js";const T=`<p>CSS \u547D\u540D\u4E00\u822C\u91C7\u7528\u5C0F\u5199\u82F1\u6587\u5355\u8BCD\u6216\u7EC4\u5408\u547D\u540D\uFF0C\u5355\u8BCD\u4E0E\u5355\u8BCD\u95F4\u4EE5&quot;-&quot;\u5206\u5272\uFF1B\u82F1\u6587\u5355\u8BCD\u4E0D\u7F29\u5199\uFF0C\u9664\u975E\u4E00\u770B\u5C31\u80FD\u660E\u767D\u7684\u5355\u8BCD\u3002</p>
+import{v as d}from"../sidebar/sidebar.6b76a212.js";import{r as t,c as p,w as u,a as g,b as h,u as m,d as e,F as v,o as f,e as b,f as w}from"../../assets/index.02ffa613.js";const T=`<p>CSS \u547D\u540D\u4E00\u822C\u91C7\u7528\u5C0F\u5199\u82F1\u6587\u5355\u8BCD\u6216\u7EC4\u5408\u547D\u540D\uFF0C\u5355\u8BCD\u4E0E\u5355\u8BCD\u95F4\u4EE5&quot;-&quot;\u5206\u5272\uFF1B\u82F1\u6587\u5355\u8BCD\u4E0D\u7F29\u5199\uFF0C\u9664\u975E\u4E00\u770B\u5C31\u80FD\u660E\u767D\u7684\u5355\u8BCD\u3002</p>
+<p><v-message title="\u6E29\u99A8\u63D0\u793A" desc="\u7EC3\u624B\u7684\u6837\u5F0F\uFF0C\u770B\u4E00\u770B\u5C31\u597D\u5566\uFF5E"></v-message></p>
 <h3>\u6587\u672C\u547D\u540D\u89C4\u8303</h3>
 <ol>
 <li>index.css: \u4E00\u822C\u7528\u4E8E\u9996\u9875\u5EFA\u7ACB\u6837\u5F0F</li>
@@ -47,7 +48,7 @@ import{v as d}from"../sidebar/sidebar.71e86bf2.js";import{r as t,c as p,w as u,a
 </ol>
 <h3>\u529F\u80FD\u547D\u540D</h3>
 <ol>
-<li>logo: \u6807\u8BB0\u7F51\u7AD9logo\u6807\u5FD7</li>
+<li>logo: \u6807\u8BB0\u7F51\u7AD9 logo \u6807\u5FD7</li>
 <li>banner: \u6807\u8BED\u3001\u5E7F\u544A\u6761\u3001\u9876\u90E8\u5E7F\u544A\u6761</li>
 <li>login: \u767B\u9646\uFF0C\uFF08\u4F8B\u5982\u767B\u5F55\u8868\u5355\uFF1Aform-login\uFF09</li>
 <li>loginbar: \u767B\u5F55\u6761</li>
