@@ -4,6 +4,7 @@
 
   /* colors */
   --color-primary: #5161ce;
+  --color-primary-rgb: 81, 97, 206;
 
   --bg-color: #fff;
 
@@ -11,6 +12,13 @@
 
   --border-color: #dcdfe6;
 
+  /* text */
+  --color-text: #333;
+  --color-text--lighter: #666;
+
   /* sidebar vars */
   --sidebar-width: 200px;
+
+  /* block vars */
+  --block-tip-bg-color: rgba(var(--color-primary-rgb), 0.1);
 }

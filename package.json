@@ -11,6 +11,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vue/compiler-core": "^3.2.41",
+    "@vue/shared": "^3.2.44",
     "echarts": "^5.4.0",
     "element-plus": "^2.2.18",
     "nprogress": "^0.2.0",

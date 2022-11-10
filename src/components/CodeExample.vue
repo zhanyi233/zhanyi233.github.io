@@ -23,7 +23,7 @@
         </ElTooltip>
       </div>
       <div class="meta" ref="meta" :style="{ height: childHeight }">
-        <div ref="codeBlock" class="demo-container-code" v-show="showCode">
+        <div class="demo-container-code" v-show="showCode">
           <pre class="language-html" v-html="html" />
         </div>
       </div>
@@ -59,7 +59,6 @@ const props = defineProps({
 
 const showCode = ref(false);
 const childHeight = ref("0");
-const codeBlock = ref();
 
 const Prism = window.Prism;
 const html = computed(() => {
@@ -80,7 +79,7 @@ const copyClick = () => {
 
 watch(showCode, (val) => {
   nextTick(() => {
-    childHeight.value = val ? `${codeBlock.value.offsetHeight}px` : "0";
+    childHeight.value = val ? '400px' : "0";
   });
 });
 
@@ -112,7 +111,7 @@ watch(showCode, (val) => {
 
   .meta {
     background-color: #fafafa;
-    overflow: hidden;
+    overflow: auto;
     height: 0;
     transition: height 0.2s;
   }

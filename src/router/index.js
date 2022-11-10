@@ -35,23 +35,12 @@ const routes = [
         meta: {
           title: "Css",
         },
-        redirect: "/examples/css/chessboard",
+        redirect: "/examples/css/buttons",
         component: () =>
           import(
             /* webpackChunkName: "ExamplesCss" */ "../views/examples/css/index.vue"
           ),
         children: [
-          {
-            path: "/examples/css/chessboard",
-            name: "ExamplesCssChessboard",
-            meta: {
-              title: "棋盘格布局",
-            },
-            component: () =>
-              import(
-                /* webpackChunkName: "ExamplesCssChessboard" */ "../views/examples/css/chessboard.vue"
-              ),
-          },
           {
             path: "/examples/css/buttons",
             name: "ExamplesCssButtons",
@@ -61,6 +50,17 @@ const routes = [
             component: () =>
               import(
                 /* webpackChunkName: "ExamplesCssButtons" */ "../views/examples/css/buttons.vue"
+              ),
+          },
+          {
+            path: "/examples/css/chessboard",
+            name: "ExamplesCssChessboard",
+            meta: {
+              title: "棋盘格布局",
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "ExamplesCssChessboard" */ "../views/examples/css/chessboard.vue"
               ),
           },
         ],

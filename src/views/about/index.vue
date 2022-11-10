@@ -8,7 +8,7 @@
     <div class="form">
       <div class="title">Hi there 👏</div>
       <div class="title-msg">
-        🤔 Exploring new technologies and developing software solutions and quick
+        😊 Exploring new technologies and developing software solutions and quick
         hacks -- 为爱发电！
       </div>
       <ul class="list">
@@ -144,7 +144,7 @@ const goTo = ({ url = "" }) => {
     .title-msg {
       margin-top: 10px;
       font-size: 16px;
-      color: #666;
+      color: var(--color-text--lighter);
     }
 
     .list {

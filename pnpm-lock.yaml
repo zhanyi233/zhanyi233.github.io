@@ -4,6 +4,7 @@ specifiers:
   '@element-plus/icons-vue': ^2.0.10
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/compiler-core': ^3.2.41
+  '@vue/shared': ^3.2.44
   echarts: ^5.4.0
   element-plus: ^2.2.18
   nprogress: ^0.2.0
@@ -22,6 +23,7 @@ specifiers:
 dependencies:
   '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.10_vue@3.2.41
   '@vue/compiler-core': registry.npmmirror.com/@vue/compiler-core/3.2.41
+  '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.44
   echarts: registry.npmmirror.com/echarts/5.4.0
   element-plus: registry.npmmirror.com/element-plus/2.2.18_vue@3.2.41
   nprogress: registry.npmmirror.com/nprogress/0.2.0
@@ -306,6 +308,12 @@ packages:
     resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.41.tgz}
     name: '@vue/shared'
     version: 3.2.41
+
+  registry.npmmirror.com/@vue/shared/3.2.44:
+    resolution: {integrity: sha512-mGZ44bnn0zpZ36nXtxbrBPno43yr96wjQE1dBEKS1Sieugt27HS4OGZVBRIgsdGzosB7vqZAvu0ttu1FDVdolA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.44.tgz}
+    name: '@vue/shared'
+    version: 3.2.44
+    dev: false
 
   registry.npmmirror.com/@vueuse/core/9.3.1_vue@3.2.41:
     resolution: {integrity: sha512-xriyD+v3D2ObH/UtnkEl+1sbcLBVHNaZaLi/rqoNEe/B92hggDEFQIGXoQUjdRzYOjASHSezf9uCDtmd7LeWyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/-/core-9.3.1.tgz}

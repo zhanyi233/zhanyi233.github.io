@@ -9,7 +9,7 @@ import { plugin as markdown } from "vite-plugin-markdown";
 export default defineConfig({
   plugins: [
     vue(),
-    [markdown({ mode: ["html", "toc"] })],
+    [markdown({ mode: ["html", "toc", 'vue'] })],
     DefineOptions(),
     ExampleTransform,
   ],
