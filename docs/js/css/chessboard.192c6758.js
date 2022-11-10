@@ -1,4 +1,4 @@
-import{_ as r,o as x,c,e as s,h as o}from"./index.821b146f.js";function p(n){n.__sourceCode=`<template>
+import{_ as r,o as x,a as c,h as s,k as o}from"../../assets/index.99e2910b.js";function p(n){n.__sourceCode=`<template>
   <div class="g-grid"></div>
 </template>
 
@@ -136,4 +136,4 @@ import{_ as r,o as x,c,e as s,h as o}from"./index.821b146f.js";function p(n){n._
     -webkit-box-reflect: below 260px;
   }
 }
-</style>`,n.__sourceCodeTitle="\u68CB\u76D8\u683C\u5E03\u5C40"}const e={},i={class:"g-grid"};function l(n,t){return x(),c("div",i)}typeof p=="function"&&p(e);const d=r(e,[["render",l],["__scopeId","data-v-231b0cb2"]]),_={__name:"chessboard",setup(n){return(t,f)=>{const a=o("code-example");return x(),s(a,{component:d})}}};export{_ as default};
+</style>`,n.__sourceCodeTitle="\u68CB\u76D8\u683C\u5E03\u5C40"}const e={},i={class:"g-grid"};function l(n,a){return x(),c("div",i)}typeof p=="function"&&p(e);const d=r(e,[["render",l],["__scopeId","data-v-231b0cb2"]]),_={__name:"chessboard",setup(n){return(a,f)=>{const t=o("code-example");return x(),s(t,{component:d})}}};export{_ as default};

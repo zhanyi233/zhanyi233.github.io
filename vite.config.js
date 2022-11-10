@@ -18,6 +18,20 @@ export default defineConfig({
    * @default 'dist'
    */
   build: {
-    outDir: "docs",
+    outDir: 'docs',
+    sourcemap: false,
+    chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      output: {
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId
+            ? chunkInfo.facadeModuleId.split("/")
+            : [];
+          const fileName =
+            facadeModuleId[facadeModuleId.length - 2] || "[name]";
+          return `js/${fileName}/[name].[hash].js`;
+        },
+      },
+    },
   },
 });
