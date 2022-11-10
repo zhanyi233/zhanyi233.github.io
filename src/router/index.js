@@ -52,6 +52,17 @@ const routes = [
                 /* webpackChunkName: "ExamplesCssChessboard" */ "../views/examples/css/chessboard.vue"
               ),
           },
+          {
+            path: "/examples/css/buttons",
+            name: "ExamplesCssButtons",
+            meta: {
+              title: "Button动效",
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "ExamplesCssButtons" */ "../views/examples/css/buttons.vue"
+              ),
+          },
         ],
       },
     ],

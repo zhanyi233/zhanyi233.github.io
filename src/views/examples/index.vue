@@ -1,5 +1,5 @@
 <template>
-  <v-sidebar :active="activeRoute" :list="menus" />
+  <v-sidebar :active="activeRoute" :list="menus" @click="handleChangeMenu"/>
   <div class="page-content">
     <div class="wrapper">
       <router-view></router-view>
@@ -8,15 +8,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed} from "vue";
 import vSidebar from "../../components/sidebar.vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 
 const currentRoutePath = "/examples";
 
 const Router = useRouter();
+const Route = useRoute();
 
-const activeRoute = ref("");
+const activeRoute = computed(() => Route.name);
 const menus = ref([]);
 
 const getRoutes = () => {
@@ -35,9 +36,14 @@ const getRoutes = () => {
       }),
     };
   });
-  activeRoute.value = menus.value.length
-    ? menus.value[0].children[0].value
-    : "";
+};
+
+const handleChangeMenu = ({ value }) => {
+  Router.push(
+    {
+      name: value,
+    },
+  )
 };
 
 onMounted(() => {

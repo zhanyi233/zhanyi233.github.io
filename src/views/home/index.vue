@@ -8,12 +8,22 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 import vSidebar from "../../components/sidebar.vue";
 import mds from "./mds/index";
+import { useRouter, useRoute } from "vue-router";
+
+const Route = useRoute(); // 当前路由
+const Router = useRouter();
 
 const html = ref(null);
-const activeRoute = ref("CssNamed");
+
+const activeRoute = computed(() => {
+  const { md } = Route.query;
+  if (!md) return 'CssNamed';
+  return md;
+});
+
 const menus = ref([
   {
     label: "Css",
@@ -38,7 +48,12 @@ const menus = ref([
 ]);
 
 const handleChangeMenu = ({ value }) => {
-  activeRoute.value = value;
+  Router.push({
+    name: Route.name,
+    query: {
+      md: value,
+    },
+  })
 };
 
 watch(
