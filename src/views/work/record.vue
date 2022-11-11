@@ -1,5 +1,5 @@
-<demo>网格用法</demo>
 <template>
+	<v-message title="温馨提示" desc="仅供参考～ 如有需要可邮件联系～"></v-message>
   <div class="preview-record" :style="previewStyle">
     <header
       class="header"
@@ -801,7 +801,7 @@ const initChartOptions = () => {
             z: 100,
             style: {
               fill: "#fff",
-              text: "RECORD CHART FOR BUSINESS",
+              text: "Frontend By zhanyi233",
               font: "bold 18px Microsoft YaHei",
             },
           },
@@ -833,7 +833,6 @@ const initChartOptions = () => {
  */
 const drawChart = () => {
   const myChart = Echarts.init(document.getElementById("grid-line"));
-  console.log(document.getElementById("grid-line"));
 
   const option = initChartOptions();
 
@@ -899,7 +898,6 @@ const onSubmitPreviewConfig = () => {
   };
 
   previewConfig.value = data;
-  console.log(previewConfig.value);
   if (previewConfig.value) drawChart();
 };
 

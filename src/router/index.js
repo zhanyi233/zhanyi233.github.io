@@ -92,16 +92,28 @@ const routes = [
     ],
   },
   {
-    path: "/interview",
-    name: "Interview",
+    path: "/work",
+    name: "Work",
     meta: {
-      title: "面试题集",
+      title: "项目总结",
       icon: "Folder",
     },
     component: () =>
-      import(
-        /* webpackChunkName: "Interview" */ "../views/interview/index.vue"
-      ),
+      import(/* webpackChunkName: "Work" */ "../views/work/index.vue"),
+    redirect: "/work/record",
+    children: [
+      {
+        path: "/work/record",
+        name: "WorkRecord",
+        meta: {
+          title: "体温单",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "WorkRecord" */ "../views/work/record.vue"
+          ),
+      },
+    ],
   },
   {
     path: "/about",
