@@ -63,6 +63,17 @@ const routes = [
                 /* webpackChunkName: "ExamplesCssChessboard" */ "../views/examples/css/chessboard.vue"
               ),
           },
+          {
+            path: "/examples/css/grid",
+            name: "ExamplesCssGrid",
+            meta: {
+              title: "多种布局",
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "ExamplesCssGrid" */ "../views/examples/css/grid.vue"
+              ),
+          },
         ],
       },
     ],
