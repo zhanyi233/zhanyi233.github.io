@@ -1,7 +1,10 @@
 <demo>网格用法</demo>
 <template>
-  <div class="preview-record" v-if="previewConfig" :style="previewStyle">
-    <header class="header">
+  <div class="preview-record" :style="previewStyle">
+    <header
+      class="header"
+      v-if="previewConfig && previewConfig.headerTableData"
+    >
       <section
         class="sample-table"
         v-for="(data, index) of previewConfig.headerTableData"
@@ -40,9 +43,12 @@
       </section>
     </header>
     <section class="chart-container">
-      <div id="grid-line" class="chart"></div>
+      <div id="grid-line" class="chart-container__inner"></div>
     </section>
-    <footer class="footer">
+    <footer
+      class="footer"
+      v-if="previewConfig && previewConfig.footerTableData"
+    >
       <section
         class="sample-table"
         v-for="(data, index) of previewConfig.footerTableData"
@@ -89,16 +95,23 @@ import * as Echarts from "echarts";
 
 const GridTop = 20;
 
+const previewConfig = ref(null); // Echarts 预览配置
+
 const labelWidth = computed(() => {
   const defaultLeft = 100;
-  if (!previewConfig.value || !previewConfig.value.canvasConfig)
+
+  if (
+    !previewConfig ||
+    !previewConfig.value ||
+    !previewConfig.value.canvasConfig
+  )
     return defaultLeft;
 
   return previewConfig.value.canvasConfig.left || defaultLeft;
 });
 
 const previewStyle = computed(() => {
-  if (previewConfig.value.grid) {
+  if (previewConfig && previewConfig.value && previewConfig.value.grid) {
     const { top, right, bottom, left, width } = previewConfig.value.grid;
 
     return {
@@ -108,8 +121,6 @@ const previewStyle = computed(() => {
   }
   return null;
 });
-
-const previewConfig = ref(null); // Echarts 预览配置
 
 const xAxisData = ref([
   "2020-10-24",
@@ -412,9 +423,8 @@ const genGraphicList = (grid, yAxis = [], units) => {
   const { moments, graphic, columns } = grid;
   const cellColumns = moments.length;
   const lineWidth = 1;
-
-  const lineLength = adjustSize(grid.width) - grid.left; // 右侧部分
-  const spacing = (lineLength - cellColumns * lineWidth) / cellColumns; // 每个单元格的大小
+  const lineLength = grid.width - grid.left;
+  const spacing = (lineLength - cellColumns * lineWidth) / cellColumns;
 
   const projectConfig = [
     [
@@ -429,11 +439,12 @@ const genGraphicList = (grid, yAxis = [], units) => {
 
   const genXAxis = ({ lineStyle, cellColumns, spacing }) => {
     const data = [];
+
     for (let i = 0; i < cellColumns; i += 1) {
       data.push({
         ...defaultConfig,
         top: i * (spacing + lineWidth) - 2 * lineWidth,
-        left: i <= 1 ? -3 : grid.left - 1,
+        left: i <= 1 ? -2 : grid.left - 1,
         style: {
           stroke: lineStyle.stroke || graphic.stroke,
           lineWidth,
@@ -451,12 +462,10 @@ const genGraphicList = (grid, yAxis = [], units) => {
     const data = [];
 
     for (let i = 0; i < cellColumns; i += 1) {
-      const realSpacing = i * (spacing + lineWidth) - 2.2 * lineWidth;
-
       data.push({
         ...defaultConfig,
         top: top === undefined ? -2 : top,
-        left: leftSpace + realSpacing,
+        left: leftSpace + i * (spacing + lineWidth) - 2 * lineWidth,
         style: {
           stroke:
             i && Number.isInteger(i / columns)
@@ -513,7 +522,7 @@ const genGraphicList = (grid, yAxis = [], units) => {
     return data;
   };
 
-  const lineHeight = adjustSize(38);
+  const lineHeight = 20;
 
   const genYAxisText = (labels, fontSize) => {
     const rowLabelMarginT = lineHeight / 2 - fontSize / 2 + lineWidth;
@@ -600,6 +609,7 @@ const genGraphicList = (grid, yAxis = [], units) => {
         })
       );
     }
+
     return data;
   };
   const momentText = genMomentText(),
@@ -729,9 +739,9 @@ const initChartOptions = () => {
           data: genMarkLineData(),
         };
       }
+
       seriesData.push(seriesItem);
     });
-
     return {
       color: colors,
       yAxis,
@@ -753,7 +763,6 @@ const initChartOptions = () => {
       axisPointer: {
         type: "cross",
       },
-      className: "chart-inner_tooltip",
     },
     grid: {
       left: canvasConfig.left,
@@ -763,14 +772,13 @@ const initChartOptions = () => {
     },
     color,
     graphic: [
-      // 支持水印
       ...graphicList,
       {
         type: "group",
         rotation: Math.PI / 4,
         bounding: "raw",
-        right: 80,
-        bottom: 80,
+        right: 110,
+        bottom: 110,
         z: 100,
         children: [
           {
@@ -779,8 +787,8 @@ const initChartOptions = () => {
             top: "center",
             z: 100,
             shape: {
-              width: 260,
-              height: 28,
+              width: 400,
+              height: 30,
             },
             style: {
               fill: "rgba(0,0,0,0.25)",
@@ -793,8 +801,8 @@ const initChartOptions = () => {
             z: 100,
             style: {
               fill: "#fff",
-              text: "WINEX MY",
-              font: "bold 14px Microsoft YaHei",
+              text: "RECORD CHART FOR BUSINESS",
+              font: "bold 18px Microsoft YaHei",
             },
           },
         ],
@@ -825,6 +833,7 @@ const initChartOptions = () => {
  */
 const drawChart = () => {
   const myChart = Echarts.init(document.getElementById("grid-line"));
+  console.log(document.getElementById("grid-line"));
 
   const option = initChartOptions();
 
@@ -890,7 +899,8 @@ const onSubmitPreviewConfig = () => {
   };
 
   previewConfig.value = data;
-  drawChart();
+  console.log(previewConfig.value);
+  if (previewConfig.value) drawChart();
 };
 
 onMounted(() => {
@@ -902,6 +912,15 @@ onMounted(() => {
 $--cell-height: 18px;
 
 .preview-record {
+  line-height: 1.2;
+  height: fit-content;
+  transform-origin: left top;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ccc;
+  box-sizing: border-box;
+  border: 1px solid #000;
+
   .sample-table {
     display: flex;
     font-size: 12px;
@@ -948,6 +967,18 @@ $--cell-height: 18px;
           overflow: hidden;
         }
       }
+    }
+  }
+
+  .chart-container {
+    border: 1px solid #000;
+    border-top-width: 0;
+    border-bottom-width: 0;
+
+    .chart-container__inner {
+      width: 575px;
+      height: 400px;
+      transform-origin: "left top";
     }
   }
 }
