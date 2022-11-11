@@ -61,6 +61,7 @@ const showCode = ref(false);
 const childHeight = ref("0");
 
 const Prism = window.Prism;
+
 const html = computed(() => {
   return Prism.highlight(
     props.component.__sourceCode,

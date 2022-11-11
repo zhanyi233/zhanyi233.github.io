@@ -15,6 +15,7 @@ const ExampleTransform = {
     }
 
     if (id == null) return;
+
     let path = `.${id.match(/\/src\/views\/.*\/demo\/.*\.vue/)[0]}`;
     const file = fs.readFileSync(path).toString();
 

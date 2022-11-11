@@ -86,7 +86,7 @@ const routes = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "EchartsLine" */ "../views/echarts/line/line.vue"
+            /* webpackChunkName: "EchartsLine" */ "../views/echarts/line/index.vue"
           ),
       },
     ],

@@ -9,16 +9,24 @@
 </template>
 
 <script setup>
+import GridLine from "./demo/record-line.vue";
 import BasicLine from "./demo/basic-line.vue";
 
 const comList = [
   {
     title: "基本用法",
-    desc: ["文字超出宽度截断，使用前请配置 width；", "当鼠标放置在轴线处显示全部内容；"],
+    desc: [
+      "文字超出宽度截断，使用前请配置 width；",
+      "当鼠标放置在轴线处显示全部内容；",
+    ],
     component: BasicLine,
   },
+  {
+    title: "网格用法",
+    desc: "",
+    component: GridLine,
+  },
 ];
-
 </script>
 
 <style lang="scss" scoped>
