@@ -5,32 +5,34 @@
       id="tsparticles"
       :options="ParticlesConfig"
     ></Particles>
-    <div class="form">
-      <div class="title">Hi there 👏</div>
-      <div class="title-msg">
-        😊 Exploring new technologies and developing software solutions and quick
-        hacks -- 为爱发电！
-      </div>
-      <ul class="list">
-        <li v-for="item in list" :key="item.title" class="list-item">
-          <div class="list-item--title">{{ item.title }}</div>
-          <div class="list-item__contents">
-            <div
-              v-for="child in item.children"
-              :key="child.img"
-              @click="goTo(child)"
-            >
-              <img :src="child.img" alt="" />
+    <div class="form-wrapper">
+      <div class="form">
+        <div class="title">Hi there 👏</div>
+        <div class="title-msg">
+          😊 Exploring new technologies and developing software solutions and
+          quick hacks -- 为爱发电！
+        </div>
+        <ul class="list">
+          <li v-for="item in list" :key="item.title" class="list-item">
+            <div class="list-item--title">{{ item.title }}</div>
+            <div class="list-item__contents">
+              <div
+                v-for="child in item.children"
+                :key="child.img"
+                @click="goTo(child)"
+              >
+                <img :src="child.img" alt="" />
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="list-item">
-          <div class="list-item--title">🤝 Connect with Me</div>
-          <div class="list-item--link">
-            <a href="mailto:2331767972@qq.com">点击发送邮件</a>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li class="list-item">
+            <div class="list-item--title">🤝 Connect with Me</div>
+            <div class="list-item--link">
+              <a href="mailto:2331767972@qq.com">点击发送邮件</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -126,57 +128,62 @@ const goTo = ({ url = "" }) => {
 <style lang="scss" scoped>
 .about-wrapper {
   position: relative;
-  padding-top: 116px;
+  padding-top: 60px;
 
-  .form {
+  .form-wrapper {
     margin: 0 auto;
-    width: 800px;
-    border: 1px solid #d0d7de;
-    color: #000;
-    border-radius: 4px;
-    padding: 24px;
-    box-sizing: border-box;
+    width: 836px;
+    height: 600px;
+    background: url("../../assets/images/about-bg.png") no-repeat;
+    background-size: 100% 100%;
 
-    .title {
-      font-size: 18px;
-    }
+    .form {
+      color: #000;
+      border-radius: 4px;
+      padding: 140px 40px 40px 40px;
+      box-sizing: border-box;
 
-    .title-msg {
-      margin-top: 10px;
-      font-size: 16px;
-      color: var(--color-text--lighter);
-    }
+      .title {
+        font-size: 18px;
+      }
 
-    .list {
-      padding: 0;
-      margin: 0;
-      list-style: none;
+      .title-msg {
+        margin-top: 10px;
+        font-size: 16px;
+        color: var(--color-text--lighter);
+      }
 
-      .list-item {
-        margin-top: 20px;
+      .list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
 
-        .list-item--title {
-          margin-bottom: 10px;
-          font-size: 16px;
-        }
+        .list-item {
+          margin-top: 20px;
 
-        .list-item__contents {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          .list-item--title {
+            margin-bottom: 10px;
+            font-size: 16px;
+          }
 
-          > div {
-            margin: 0 10px 0 0;
+          .list-item__contents {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-            img {
-              cursor: pointer;
+            > div {
+              margin: 0 10px 0 0;
+
+              img {
+                cursor: pointer;
+              }
             }
           }
-        }
 
-        .list-item--link {
-          a {
-            color: var(--color-primary);
+          .list-item--link {
+            a {
+              color: var(--color-primary);
+            }
           }
         }
       }
