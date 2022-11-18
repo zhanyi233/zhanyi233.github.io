@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+import _ from 'lodash';
 import { ref, watch, computed } from "vue";
 import vSidebar from "../../components/sidebar.vue";
 import mds from "./mds/index";
@@ -66,3 +67,12 @@ watch(
   { immediate: true, deep: true }
 );
 </script>
+
+<style lang="scss" scoped>
+.markdown-body {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+</style>
