@@ -100,6 +100,17 @@ const routes = [
             /* webpackChunkName: "EchartsLine" */ "../views/echarts/line/index.vue"
           ),
       },
+      {
+        path: "/echarts/custom",
+        name: "EchartsCustom",
+        meta: {
+          title: "自定义图表",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "EchartsCustom" */ "../views/echarts/custom/index.vue"
+          ),
+      },
     ],
   },
   {
