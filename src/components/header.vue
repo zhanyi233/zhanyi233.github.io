@@ -2,7 +2,15 @@
   <div class="navbar">
     <div class="navbar-wrapper">
       <div class="navbar-brand">
-        <img alt="" src="../assets/images/logo.png"/>
+        <img
+          alt=""
+          src="../assets/images/logo.png"
+          @click="
+            Router.push({
+              name: 'Welcome',
+            })
+          "
+        />
       </div>
       <div class="navbar-collapse">
         <ul class="navbar-nav">
@@ -91,7 +99,9 @@ const onClickMenu = ({ path }) => {
  * @description: 获取导航栏菜单
  */
 const getRoutes = () => {
-  navs.value = Router.options.routes.filter(({ path }) => path !== "/");
+  navs.value = Router.options.routes.filter(
+    ({ path }) => path !== "/" && path !== "/welcome"
+  );
   setTimeout(() => {
     init();
   }, 300);

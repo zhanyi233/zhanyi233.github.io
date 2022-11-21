@@ -6,7 +6,13 @@ import "nprogress/nprogress.css";
 const routes = [
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/welcome",
+  },
+  {
+    path: "/welcome",
+    name: "Welcome",
+    component: () =>
+      import(/* webpackChunkName: "Welcome" */ "../views/welcome.vue"),
   },
   {
     path: "/home",
