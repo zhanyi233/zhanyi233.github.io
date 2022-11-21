@@ -101,10 +101,21 @@ const routes = [
           ),
       },
       {
+        path: "/echarts/pie",
+        name: "EchartsPie",
+        meta: {
+          title: "饼图",
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "EchartsPie" */ "../views/echarts/pie/index.vue"
+          ),
+      },
+      {
         path: "/echarts/custom",
         name: "EchartsCustom",
         meta: {
-          title: "自定义图表",
+          title: "混合图表",
         },
         component: () =>
           import(

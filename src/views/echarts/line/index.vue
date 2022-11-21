@@ -13,7 +13,7 @@ import BasicLine from "./demo/basic-line.vue";
 
 const comList = [
   {
-    title: "基本用法",
+    title: "自定义x轴",
     desc: [
       "文字超出宽度截断，使用前请配置 width；",
       "当鼠标放置在轴线处显示全部内容；",

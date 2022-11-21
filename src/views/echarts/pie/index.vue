@@ -1,6 +1,6 @@
 <template>
   <!-- 一级标题 -->
-  <h2 class="component-h1">混合图表</h2>
+  <h2 class="component-h1">饼图</h2>
   <!-- BaseTable内容 -->
   <div class="component-block" v-for="item in comList" :key="item.component">
     <v-message :title="item.title" :desc="item.desc"></v-message>
@@ -9,15 +9,16 @@
 </template>
 
 <script setup>
-import TangentialPolarBar from "./demo/tangential-polar-bar.vue";
+import BasicPie from "./demo/basic-pie.vue";
 
 const comList = [
   {
-    title: "环形半圆",
+    title: "扇区放大",
     desc: [
-      "极坐标系 + 柱状图",
+      '扇区默认放大',
+      '自定义中间文字'
     ],
-    component: TangentialPolarBar,
+    component: BasicPie,
   },
 ];
 </script>
