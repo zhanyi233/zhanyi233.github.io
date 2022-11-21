@@ -12,32 +12,9 @@
 import _ from "lodash";
 import { ref, watch, computed } from "vue";
 import vSidebar from "../../components/sidebar.vue";
-import mds from "./mds/index";
+import { menus, docs } from "./mds/index";
 import { useRouter, useRoute } from "vue-router";
 import { treeToFlat } from '../../utils/tree-store';
-
-const menus = ref([
-  {
-    label: "Css",
-    value: "Css",
-    children: [
-      {
-        label: "命名规范",
-        value: "CssNamed",
-      },
-    ],
-  },
-  {
-    label: "JavaScript",
-    value: "JavaScript",
-    children: [
-      {
-        label: "JavaScript单行代码",
-        value: "Js_1",
-      },
-    ],
-  },
-]);
 
 const Route = useRoute(); // 当前路由
 const Router = useRouter();
@@ -51,7 +28,7 @@ const activeRoute = computed(() => {
 });
 
 const title = computed(() => {
-  const target = treeToFlat(menus.value).find(({ value }) => activeRoute.value === value);
+  const target = treeToFlat(menus).find(({ value }) => activeRoute.value === value);
   return target.label;
 });
 
@@ -68,7 +45,7 @@ watch(
   () => activeRoute.value,
   (newVal, oldVal) => {
     if (newVal !== oldVal) {
-      html.value = mds[newVal];
+      html.value = docs[newVal];
     }
   },
   { immediate: true, deep: true }
