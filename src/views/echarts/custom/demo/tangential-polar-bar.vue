@@ -26,9 +26,9 @@ const drawChart = () => {
         color: "#333",
         fontSize: 14,
       },
-      itemGap: 10, // 标题间的距离
+      itemGap: 5, // 标题间的距离
       left: "center",
-      bottom: "20%",
+      bottom: "15%",
     },
     // 极坐标系的角度轴
     angleAxis: {
@@ -55,7 +55,7 @@ const drawChart = () => {
     },
     polar: {
       center: ["50%", "80%"],
-      radius: ["40%", "150%"], // 图形大小
+      radius: ["40%", "100%"], // 图形大小
     },
     series: [
       // 上层数据
@@ -98,7 +98,7 @@ const drawChart = () => {
         },
         coordinateSystem: "polar", // 使用极坐标系
         roundCap: true,
-        barWidth: 10,
+        barWidth: 5,
         barGap: "-100%",
         emphasis: {
           disabled: true,
@@ -112,7 +112,7 @@ const drawChart = () => {
         data: [total, total, total, total],
         coordinateSystem: "polar",
         roundCap: true,
-        barWidth: 10,
+        barWidth: 5,
         barGap: "-100%",
         itemStyle: {
           opacity: 1,
@@ -139,7 +139,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .chart {
-  width: 100%;
-  height: 400px;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
 }
 </style>

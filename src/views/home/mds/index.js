@@ -1,11 +1,13 @@
 import { html as CssNamed } from "./css-named.md";
 import { html as Js_1 } from "./js-1.md";
 import { html as NpmDocs } from "./npm-docs.md";
+import { html as Vue_1 } from './vue-1.md';
 
 export const docs = {
   CssNamed,
   Js_1,
   NpmDocs,
+  Vue_1,
 };
 
 export const menus = [
@@ -26,6 +28,16 @@ export const menus = [
       {
         label: "JavaScript单行代码",
         value: "Js_1",
+      },
+    ],
+  },
+  {
+    label: "Vue",
+    value: "Vue",
+    children: [
+      {
+        label: "Vue常见问题",
+        value: "Vue_1",
       },
     ],
   },
