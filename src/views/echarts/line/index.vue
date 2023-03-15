@@ -9,16 +9,22 @@
 </template>
 
 <script setup>
-import BasicLine from "./demo/basic-line.vue";
+import BasicLine from './demo/basic-line.vue';
+import BasicLineV2 from './demo/basic-line-v2.vue';
 
 const comList = [
   {
-    title: "自定义x轴",
+    title: '自定义x轴',
     desc: [
-      "文字超出宽度截断，使用前请配置 width；",
-      "当鼠标放置在轴线处显示全部内容；",
+      '文字超出宽度截断，使用前请配置 width；',
+      '当鼠标放置在轴线处显示全部内容；',
     ],
     component: BasicLine,
+  },
+  {
+    title: '更多配置',
+    desc: ['dataZoom', 'splitLine'],
+    component: BasicLineV2,
   },
 ];
 </script>
