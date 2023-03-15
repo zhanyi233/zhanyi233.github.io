@@ -1,4 +1,4 @@
-import{i as f}from"../index/index.ac5a7abe.js";import{o as y,a as c,c as a,_ as d,F as i,m as x,h as _,f as r,q as g,s as v,p as l}from"../../assets/index.b89fcc50.js";function p(e){e.__sourceCode=`<template>
+import{i as f}from"../index/index.ac5a7abe.js";import{o as y,a as c,c as a,_ as d,F as i,m as x,h as _,f as r,q as g,s as v,p as l}from"../../assets/index.570b7bb6.js";function p(e){e.__sourceCode=`<template>
   <div id="basic-pie" class="chart"></div>
 </template>
 
